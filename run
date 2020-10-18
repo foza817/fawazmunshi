@@ -1,12 +1,12 @@
 #!/bin/bash 
 
 
-#      ▇▇▇                                       ▇▇▇               ▄▇▇▇▇▇▄                 ▇▇                                    ▇▇                
-#      ▇▇        ▇                        ▇       ▇▇             ▄▇                ▇▄                        ▇▇                  ▇▇
-#      ▇▇          ▇ @alone_kurdish   ▇         ▇▇            ▄▇▄▄▄▄▄▇▄                               ▇▇ ▇▇
-#      ▇▇             ▇             ▇             ▇▇        ▄▇                            ▇▄                          ▇▇ ▇▇ ¦ Dev : @alone_kurdish
-#      ▇▇                ▇       ▇                ▇▇      ▄▇ ¦ Dev : @alone_kurdish ▇▄                 ▇▇                 ▇▇
-#      ▇▇                   ▇▇                    ▇▇     ▄▇                                    ▇▄      ▇▇                                  ▇▇¦ Source Mustafa Kurdish BY @alone_kurdish
+#      ▇▇▇▇▇▇▇¦ Dev : @FOZA817
+#      ▇▇       
+#      ▇▇         
+#      ▇▇  ▇▇ ¦ Dev : @FOZA817
+#      ▇▇  
+#      ▇▇¦ Source Fawaz Munshi  BY @FOZA817
 #---------------------------------------------------------------------
 cd $(cd $(dirname $0); pwd)
  
@@ -22,12 +22,12 @@ Version=`lsb_release -rs | cut -f1 -d"."`
 
 if [ "$Version" == "18" ];then
 echo -e "${GREEN}
-▇▇▇                                       ▇▇▇               ▄▇▇▇▇▇▄                 ▇▇                                    ▇▇                
-▇▇        ▇                        ▇       ▇▇             ▄▇                ▇▄                        ▇▇                  ▇▇
-▇▇          ▇ @alone_kurdish   ▇         ▇▇            ▄▇▄▄▄▄▄▇▄                               ▇▇ ▇▇
-▇▇             ▇             ▇             ▇▇        ▄▇                            ▇▄                          ▇▇ ▇▇ ¦ Dev : @alone_kurdish
-▇▇                ▇       ▇                ▇▇      ▄▇ ¦ Dev : @alone_kurdish  ▇▄                 ▇▇                 ▇▇
-▇▇                   ▇▇                    ▇▇     ▄▇                                    ▇▄      ▇▇                                  ▇▇¦ Source Mustafa Kurdi BY @alone_kurdish
+      ▇▇▇▇▇▇▇¦ Dev : @FOZA817
+      ▇▇       
+      ▇▇         
+      ▇▇  ▇▇ ¦ Dev : @FOZA817
+      ▇▇  
+      ▇▇¦ Source Fawaz Munshi  BY @FOZA817
 ----------------------------------------------------------------------${CNIL}"
 echo -e "${RED}| للاسف لايمكنك تنصيب السورس ع نظام اوبنتو {${Version}} يجب ان يكون على اصدار  اقل مثلا  ${SMAY}14 او 16
 ${CNIL}";
@@ -70,10 +70,10 @@ sudo rm -fr ../.telegram-cli
 done
 else
 
-if ! screen -list | grep -q "FHAIWIH"; then
+if ! screen -list | grep -q "foza817"; then
 screen -S FHAIWIH ./run R
 fi
-screen -X -S FHAIWIH kill
-screen -S FHAIWIH ./run R
+screen -X -S foza817 kill
+screen -S foza817 ./run R
 fi
 
