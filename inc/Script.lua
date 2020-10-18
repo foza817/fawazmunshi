@@ -3157,11 +3157,11 @@ local klma = redis:get(max..'replay1'..msg.chat_id_..msg.sender_user_id_)
 if msg.text then 
 redis:hset(max..'replay:'..msg.chat_id_,klma,Flter_Markdown(msg.text))
 redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'(['..klma..'])\n  ✓ تم اضافت الرد 🚀 \n-')
+return sendMsg(msg.chat_id_,msg.id_,'(['..klma..'])\n  ✓ تم اضافه الرد 🚀 \n-')
 elseif msg.photo then 
 redis:hset(max..'replay_photo:group:'..msg.chat_id_,klma,photo_id)
 redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه صوره للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوره الاتيه ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه صوره للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الصوره الاتيه ')
 elseif msg.voice then
 redis:hset(max..'replay_voice:group:'..msg.chat_id_,klma,voice_id)
 redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
@@ -3169,19 +3169,19 @@ return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه بصمه صوت لل
 elseif msg.animation then
 redis:hset(max..'replay_animation:group:'..msg.chat_id_,klma,animation_id)
 redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه متحركه للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوره الاتيه ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه متحركه للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الصوره الاتيه ')
 elseif msg.video then
 redis:hset(max..'replay_video:group:'..msg.chat_id_,klma,video_id)
 redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه فيديو للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الفيديو الاتي ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه فيديو للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الفيديو الاتي ')
 elseif msg.audio then
 redis:hset(max..'replay_audio:group:'..msg.chat_id_,klma,audio_id)
 redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه للصوت للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوت الاتي ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه للصوت للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الصوت الاتي ')
 elseif msg.sticker then
 redis:hset(max..'replay_sticker:group:'..msg.chat_id_,klma,sticker_id)
 redis:del(max..'addrd:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه ملصق للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الملصق الاتي ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه ملصق للرد بنجاح ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الملصق الاتي ')
 end  
 
 end
@@ -3192,11 +3192,11 @@ local klma = redis:get(max..'allreplay:'..msg.chat_id_..msg.sender_user_id_)
 if msg.text then
 redis:hset(max..'replay:all',klma,Flter_Markdown(msg.text))
 redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'(['..klma..'])\n  ✓ تم اضافت الرد لكل المجموعات 🚀 ')
+return sendMsg(msg.chat_id_,msg.id_,'(['..klma..'])\n  ✓ تم اضافه الرد لكل المجموعات 🚀 ')
 elseif msg.photo then 
 redis:hset(max..'replay_photo:group:',klma,photo_id)
 redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه صوره للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوره الاتيه ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه صوره للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الصوره الاتيه ')
 elseif msg.voice then
 redis:hset(max..'replay_voice:group:',klma,voice_id)
 redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
@@ -3204,19 +3204,19 @@ return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه بصمه صوت لل
 elseif msg.animation then
 redis:hset(max..'replay_animation:group:',klma,animation_id)
 redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه متحركه للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوره الاتيه ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه متحركه للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الصوره الاتيه ')
 elseif msg.video then
 redis:hset(max..'replay_video:group:',klma,video_id)
 redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه فيديو للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵لاضهار الفيديو الاتي ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه فيديو للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵لاظهار الفيديو الاتي ')
 elseif msg.audio then
 redis:hset(max..'replay_audio:group:',klma,audio_id)
 redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه للصوت للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الصوت الاتي ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه للصوت للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الصوت الاتي ')
 elseif msg.sticker then
 redis:hset(max..'replay_sticker:group:',klma,sticker_id)
 redis:del(max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
-return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه ملصق للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاضهار الملصق الاتي ')
+return sendMsg(msg.chat_id_,msg.id_,'🗂│تم اضافه ملصق للرد العام ✓\n🗂│يمكنك ارسال ❴ ['..klma..'] ❵ لاظهار الملصق الاتي ')
 end  
 
 end
@@ -3264,7 +3264,7 @@ redis:hdel(max..'replay_audio:group:',msg.text)
 redis:hdel(max..'replay_sticker:group:',msg.text)
 redis:hdel(max..'replay_video:group:',msg.text)
 redis:setex(max..'allreplay:'..msg.chat_id_..msg.sender_user_id_,300,msg.text)
-return sendMsg(msg.chat_id_,msg.id_,"📜│جيد , يمكنك الان ارسال جوا ب الردالعام \n🔛│[[ نص,صوره,فيديو,متحركه,بصمه,اغنيه ]]\n✓")
+return sendMsg(msg.chat_id_,msg.id_,"📜│جيد , يمكنك الان ارسال جواب الردالعام \n🔛│[[ نص,صوره,فيديو,متحركه,بصمه,اغنيه ]]\n✓")
 end
 end
 
@@ -3354,7 +3354,7 @@ rem_data_group(groups[i])
 end
 end)
 end
-return sendMsg(msg.chat_id_,msg.id_,'📜*│*تم اذاعه الكليشه بنجاح 🏌🏻\n🗣*│*للمـجمـوعآت » ❴ *'..#groups..'* ❵ گروب \n👥*│* للمـشـترگين » ❴ '..#pv..' ❵ مـشـترگ \n✓')
+return sendMsg(msg.chat_id_,msg.id_,'📜*│*تم اذاعه الكليشه بنجاح 🏌🏻\n🗣*│*للمـجمـوعات » ❴ *'..#groups..'* ❵ قروب \n👥*│* للمـشـترگين » ❴ '..#pv..' ❵ مـشـترك \n✓')
 end
 
 if redis:get(max..'fwd:pv'..msg.sender_user_id_) then ---- استقبال رساله الاذاعه خاص
@@ -3414,7 +3414,7 @@ end
 if msg.adduser and msg.adduser == our_id and redis:get(max..':WELCOME_BOT') then
 sendPhoto(msg.chat_id_,msg.id_,redis:get(max..':WELCOME_BOT'),[[⚜│اهلا انا بوت اسـمـي ]]..redis:get(max..':NameBot:')..[[ ✓
 👨🏻‍✈️│اختصـاصـي حمـايه المـجمـوعات
-📛│مـن السـبام والتوجيهہ‌‏ والتكرار والخ...
+📛│مـن السـبام والتوجيه والتكرار والخ...
 
 🎭│مـعـرف الـمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ 🌿
 ]])
@@ -3619,7 +3619,7 @@ Restrict(msg.chat_id_,msg.sender_user_id_,1)
 redis:setex(max..'sender:'..msg.sender_user_id_..':flood',30,true)
 if datau.username_ then USERNAME = '@'..datau.username_ else USERNAME = FlterName(datau.first_name_..' '..(datau.last_name_ or "")) end
 local USERCAR = utf8.len(USERNAME)
-SendMention(msg.chat_id_,datau.id_,msg.id_,"🙍🏻‍♂│العضو » "..USERNAME.."\n🚸│قمـت بتگرآر آگثر مـن "..NUM_MSG_MAX.." رسـآلهہ‌‏ , لذآ تم تقييدگ مـن آلمـجمـوعهہ‌‏ ✓\n",12,USERCAR) 
+SendMention(msg.chat_id_,datau.id_,msg.id_,"🙍🏻‍♂│العضو » "..USERNAME.."\n🚸│قمـت بتكرار اكثر مـن "..NUM_MSG_MAX.." رسـآلهہ‌‏ , لذآ تم تقييدك مـن المـجمـوعهہ‌‏ ✓\n",12,USERCAR) 
 return false
 end)
 end 
@@ -3631,7 +3631,7 @@ local Chek_Info = https.request('https://api.telegram.org/bot'..Token..'/getChat
 local Json_Info = JSON.decode(Chek_Info)
 if Json_Info.ok == true then
 if Json_Info.result.status == "creator" then
-return sendMsg(msg.chat_id_,msg.id_,'🚸│صلاحياته منشئ الكروب\n🍃')   
+return sendMsg(msg.chat_id_,msg.id_,'🚸│صلاحياته منشئ القروب\n🍃')   
 end 
 if Json_Info.result.status == "member" then
 return sendMsg(msg.chat_id_,msg.id_,'🚸│مجرد عضو هنا\n🍃')   
@@ -4221,7 +4221,7 @@ local su = {
 "عيون ["..Bot_Name.."] ",
 "لبيه يروحي"}
 local ss97 = {
-"لعنه شعندك","هاه",
+"يالبيض شعندك","هاه",
 "امر شتبي","لبيه","هلا",
 "عيوني",
 "عيون ["..Bot_Name.."] ",
@@ -4230,7 +4230,7 @@ local ss97 = {
 }
 local ns = {
 "اسمي ["..Bot_Name.."] يقلبي",
-"نادني ب ["..Bot_Name.."] يتبن",
+"نادني ب ["..Bot_Name.."] يابيض",
 "مكتوب اسمي ["..Bot_Name.."] متعرف تقرا ",
 "بوت بعينك يتبن ",
 "اسمي ["..Bot_Name.."] ",
@@ -4268,7 +4268,7 @@ local np = {
 }
 local sh = {
 "ونا اكثر يروحي",
-"احبنك",
+"احبك",
 "اعشقك",
 "اموت فيك يروحي",
 }
