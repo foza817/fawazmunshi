@@ -105,7 +105,7 @@ Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس  مصطفى \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس  فواز \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -124,10 +124,10 @@ if not TokenBot then
 print('\27[0;33m>>'..[[
 ▇▇▇▇▇▇
 ▇
-▇┊Dev : @alone_kurdish
+▇┊Dev : @FOZA817
 ▇▇▇▇▇▇
 ▇
-▇┊Dev : @alone_kurdish
+▇┊Dev : @FOZA817
 ▇
 #---------------------------------------------------------
 ]]..'\027[0;32m')
@@ -160,10 +160,10 @@ end
 print('\27[0;33m>>'..[[
 ▇▇▇▇▇▇
 ▇
-▇┊Dev : @alone_kurdish
+▇┊Dev : @FOZA817
 ▇▇▇▇▇▇
 ▇
-▇┊Dev : @alone_kurdish
+▇┊Dev : @FOZA817
 ▇
 #---------------------------------------------------------
 ]]..'\027[0;32m'
@@ -329,10 +329,10 @@ kick_user(msg.sender_user_id_, msg.chat_id_)
 end
 if msg.content_.members_[0].id_ == our_id and redis:get(max..':WELCOME_BOT') then
 SUDO_USER = redis:hgetall(max..'username:'..SUDO_ID).username
-sendPhoto(msg.chat_id_,msg.id_,redis:get(max..':WELCOME_BOT'),[[🙋🏽‍♂╿ مـرحبآ آنآ بوت آسـمـي ]]..redis:get(max..':NameBot:')..[[ ⚜
-⚔│ آختصـآصـي حمـآيهہ‌‏ آلمـجمـوعآت
-🚸│ مـن آلسـبآم وآلتوجيهہ‌‏ وآلتگرآر وآلخ...
-⚖️╽ مـعرف آلمـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ 🌿
+sendPhoto(msg.chat_id_,msg.id_,redis:get(max..':WELCOME_BOT'),[[🙋🏽‍♂╿ مـرحبا انا بوت اسـمـي ]]..redis:get(max..':NameBot:')..[[ ⚜
+⚔│ اختصـاصـي حمـايه المـجمـوعات
+🚸│ مـن السـبام والتوجيه والتكرار والخ...
+⚖️╽ مـعرف المـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ 🌿
 ]])
 return false
 end
@@ -511,7 +511,7 @@ msg.text = Mohammad:gsub(Mohammad,mmdi)
 end
 end
 	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and msg.sender_user_id_ == SUDO_ID then
-	return sendMsg(msg.chat_id_,msg.id_," 🗂┇تہ‏‏م تحديث آلمـلفآت \n✓",nil,function(arg,data)
+	return sendMsg(msg.chat_id_,msg.id_," 🗂┇تم تحديث المـلفات \n✓",nil,function(arg,data)
 	Refresh_Start = true
 	end)
 	end 
@@ -727,7 +727,7 @@ end
 	end
 	end
 	io.popen("rm -fr ../.telegram-cli/data/document/*")
-	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع آلنسـخهہ‏‏ آلآحتيآطـيهہ\n⚖️*¦* حآليآ عدد مـجمـوعآتگ هہ‏‏يهہ‏‏ *'..redis:scard(max..'group:ids')..'* 🌿\n✓')
+	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع النسـخهہ‏‏ الاحتياطـيهہ\n⚖️*¦* حاليا عدد مـجمـوعاتگ هيه‏‏ *'..redis:scard(max..'group:ids')..'* 🌿\n✓')
 	end
 	elseif data.ID == "UpdateUser" then  
 	if data.user_.type_.ID == "UserTypeDeleted" then
