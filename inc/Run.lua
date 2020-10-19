@@ -51,31 +51,31 @@ end
 
 function create_config(Token)
 if not Token then
-io.write('\n\27[1;33m￤آلآن آدخل توكــن آلبوت  ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
+io.write('\n\27[1;33m￤الان ادخل توكــن البوت  ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
 Token = io.read():gsub(' ','')
 if Token == '' then
-print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤ عذرآ لم تقوم بآدخآل آي شـيء , آدخل توگن آلبوت آلآن ')
+print('\n\27[1;31m￤ You Did not Enter TOKEN !\n￤ عذرا لم تقوم بادخال اي شـيء , ادخل توكن البوت الان ')
 create_config()
 end
 Api_Token = 'https://api.telegram.org/bot'..Token
 local url , res = https.request(Api_Token..'/getMe')
 if res ~= 200 then
-print('\n\27[1;31m￤ Your Token is Incorrect Please Check it!\n￤ آلتوگن آلذي آدخلتهہ‏‏ غير صـحيح , تآگد مـنهہ‏‏ ثم حآول مـجددآ!')
+print('\n\27[1;31m￤ Your Token is Incorrect Please Check it!\n￤ التوكن الذي ادخلته غير صـحيح , تاكد مـنه ثم حاول مـجددا!')
 create_config()
 end
 local GetToken = JSON.decode(url)
 BOT_NAME = GetToken.result.first_name
 BOT_User = "@"..GetToken.result.username
-io.write('\n\27[1;36m￤تم آدخآل آلتوگن بنجآح   \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
+io.write('\n\27[1;36m￤تم ادخال التوكن بنجاح   \n￤Success Enter Your Token: \27[1;34m@'..GetToken.result.username..'\n\27[0;39;49m') 
 end
-io.write('\n\27[1;33m￤آدخل ايدي آلمـطـور آلآسـآسـي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
+io.write('\n\27[1;33m￤ادخل ايدي المـطـور الاسـاسـي ↓  \n￤Enter your USERID SUDO : \27[0;39;49m')
 SUDO_USER = io.read():gsub(' ','')
 if SUDO_USER == '' then
-print('\n\27[1;31m￤ You Did not Enter USERID !\n￤ لم تقوم بآدخآل شـي , يرجى آلآنتبآهہ‏‏ وآدخل آلآن ايدي آلمطور آلآسـآسـي')
+print('\n\27[1;31m￤ You Did not Enter USERID !\n￤ لم تقوم بادخال شـي , يرجى الانتباه وادخل الان ايدي المطور الاسـاسـي')
 create_config(Token)
 end 
 if not SUDO_USER:match('(%d+)(%d+)(%d+)(%d+)(%d+)') then
-print('\n\27[1;31m￤ This is Not USERID !\n￤هہ‏‏ذآ الايدي ليس موجود بل تلگرآم , عذرآ آدخل آلايدي آلصـحيح آلآن . ')
+print('\n\27[1;31m￤ This is Not USERID !\n￤هذا الايدي ليس موجود بل تلقرام , عذرا ادخل الايدي الصـحيح الان . ')
 create_config(Token)
 end 
 print('('..SUDO_USER..')')
@@ -84,7 +84,7 @@ GetUser = json:decode(url)
 if res ~= 200 then
 end
 if GetUser.ok == false then
-print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـآ في آلآتصـآل بآلسـيرفر , يرجى مـرآسـلهہ‏‏ مـطـور آلسـورس ليتمـگن مـن حل آلمـشـگلهہ‏‏ في آسـرع وقت مـمـگن . !')
+print('\n\27[1;31m￤ Conect is Failed !\n￤ حدث خطـا في الاتصـال بالسـيرفر , يرجى مـراسـله مـطـور السـورس ليتمـكن مـن حل المـشـگله في اسـرع وقت مـمـكن . !')
 create_config(Token)
 end
 GetUser.result.username = GetUser.result.username or GetUser.result.first_name
@@ -105,7 +105,7 @@ Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس  فواز \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..SUDO_USER..") \n🔖┊شكرا لاستخدامك سورس  فواز \n📡┊أرســل  الان /start\n♦️┊لاظهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
 https.request(Api_Token..'/sendMessage?chat_id='..SUDO_USER..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -125,7 +125,7 @@ print('\27[0;33m>>'..[[
 ▇▇▇▇▇▇
 ▇
 ▇┊Dev : @FOZA817
-▇▇▇▇▇▇
+▇▇▇
 ▇
 ▇┊Dev : @FOZA817
 ▇
@@ -161,7 +161,7 @@ print('\27[0;33m>>'..[[
 ▇▇▇▇▇▇
 ▇
 ▇┊Dev : @FOZA817
-▇▇▇▇▇▇
+▇▇▇
 ▇
 ▇┊Dev : @FOZA817
 ▇
@@ -329,7 +329,7 @@ kick_user(msg.sender_user_id_, msg.chat_id_)
 end
 if msg.content_.members_[0].id_ == our_id and redis:get(max..':WELCOME_BOT') then
 SUDO_USER = redis:hgetall(max..'username:'..SUDO_ID).username
-sendPhoto(msg.chat_id_,msg.id_,redis:get(max..':WELCOME_BOT'),[[🙋🏽‍♂╿ مـرحبا انا بوت اسـمـي ]]..redis:get(max..':NameBot:')..[[ ⚜
+sendPhoto(msg.chat_id_,msg.id_,redis:get(max..':WELCOME_BOT'),[[♂╿ مـرحبا انا بوت اسـمـي ]]..redis:get(max..':NameBot:')..[[ ⚜
 ⚔│ اختصـاصـي حمـايه المـجمـوعات
 🚸│ مـن السـبام والتوجيه والتكرار والخ...
 ⚖️╽ مـعرف المـطـور  : ]]..SUDO_USER:gsub([[\_]],'_')..[[ 🌿
@@ -472,15 +472,15 @@ function tdcli_update_callback(data)
 	UpdateSourceStart = false
 	EditMsg(data.message_.chat_id_,data.message_.id_,'10% - |█          |')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'20% - |███         |')
-	download_file('https://raw.githubusercontent.com‏/AHMEDFGTH/AHMED/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/inc/Run.lua','./inc/Run.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'40% - |█████       |')
-	download_file('https://raw.githubusercontent.com/AHMEDFGTH/AHMED/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/inc/locks.lua','./inc/locks.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'60% - |███████     |')
-	download_file('https://raw.githubusercontent.com‏/AHMEDFGTH/AHMED/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/inc/Script.lua','./inc/Script.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'80% - |█████████   |')
-	download_file('https://raw.githubusercontent.com/AHMEDFGTH/AHMED/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/AHMEDFGTH/AHMED/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/AHMEDFGTH/AHMED/master/plugins/games.lua','./plugins/games.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/plugins/games.lua','./plugins/games.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n🔝*¦* السورس الى اصدار \n📟*¦* تم اعاده تشغيل السورس بنجاح')
 	dofile("./inc/Run.lua")
 	print("Update Source And Reload ~ ./inc/Run.lua")
@@ -511,18 +511,18 @@ msg.text = Mohammad:gsub(Mohammad,mmdi)
 end
 end
 	if (msg.text=="تحديث" or msg.text=="we" or msg.text=="تحديث ♻️") and msg.sender_user_id_ == SUDO_ID then
-	return sendMsg(msg.chat_id_,msg.id_," 🗂┇تم تحديث المـلفات \n✓",nil,function(arg,data)
+	return sendMsg(msg.chat_id_,msg.id_," تم تحديث المـلفات \n✓",nil,function(arg,data)
 	Refresh_Start = true
 	end)
 	end 
 	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID then
-	download_file('https://raw.githubusercontent.com‏/AHMEDFGTH/AHMED/master/inc/Run.lua','./inc/Run.lua')
-	download_file('https://raw.githubusercontent.com‏/AHMEDFGTH/AHMED/master/inc/Script.lua','./inc/Script.lua')
-	download_file('https://raw.githubusercontent.com‏/AHMEDFGTH/AHMED/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/AHMEDFGTH/AHMED/master/inc/locks.lua','./inc/locks.lua')
-	download_file('https://raw.githubusercontent.com/AHMEDFGTH/AHMED/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com‏/AHMEDFGTH/AHMED/master/plugins/games.lua','./plugins/games.lua')
-	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/foza817/fawazmunshi/master/plugins/games.lua','./plugins/games.lua')
+	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n💼| { Bot is Update » }👍🏿',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
 	end) 
@@ -533,7 +533,7 @@ end
 	redis:del('setusername'..msg.sender_user_id_)
 	mmd = redis:get(max..":SUDO_ID:")
 redis:hset(max..'username:'..tonumber(mmd),'username',msg.text)
-	send_msg(msg.chat_id_,"🙋🏻‍♂│عزيزي تم تغيير المطور الاساسي بنجاح الان ارسل reload ...🍂")
+	send_msg(msg.chat_id_,"♂│عزيزي تم تغيير المطور الاساسي بنجاح الان ارسل reload ...🍂")
 	end
 	if msg.text and msg.text:match('(%d+)(%d+)(%d+)(%d+)') and redis:get('setid'..msg.sender_user_id_) then
 	redis:setex('setusername'..msg.sender_user_id_,120,true)
@@ -548,7 +548,7 @@ end
 	
 	
 	if msg.text== 'reload' and msg.sender_user_id_ == SUDO_ID then
-	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم أعـاده تشغيل البوت  *} 📡.\n\n👨🏼‍💼| { Bot is Reloaded » }👍🏿',nil,function(arg,data)
+	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم أعـاده تشغيل البوت  *} 📡.\n\n💼| { Bot is Reloaded » }👍🏿',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
 	end)
@@ -727,7 +727,7 @@ end
 	end
 	end
 	io.popen("rm -fr ../.telegram-cli/data/document/*")
-	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع النسـخهہ‏‏ الاحتياطـيهہ\n⚖️*¦* حاليا عدد مـجمـوعاتگ هيه‏‏ *'..redis:scard(max..'group:ids')..'* 🌿\n✓')
+	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع النسـخه الاحتياطـيه\n⚖️*¦* حاليا عدد مـجمـوعاتگ هيه *'..redis:scard(max..'group:ids')..'* 🌿\n✓')
 	end
 	elseif data.ID == "UpdateUser" then  
 	if data.user_.type_.ID == "UserTypeDeleted" then
