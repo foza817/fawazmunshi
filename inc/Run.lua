@@ -727,7 +727,7 @@ end
 	end
 	end
 	io.popen("rm -fr ../.telegram-cli/data/document/*")
-	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع النسـخه الاحتياطـيه\n⚖️*¦* حاليا عدد مـجمـوعاتگ هيه *'..redis:scard(max..'group:ids')..'* 🌿\n✓')
+	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع النسـخه الاحتياطـيه\n⚖️*¦* حاليا عدد مـجمـوعاتك هيه *'..redis:scard(max..'group:ids')..'* 🌿\n✓')
 	end
 	elseif data.ID == "UpdateUser" then  
 	if data.user_.type_.ID == "UserTypeDeleted" then
