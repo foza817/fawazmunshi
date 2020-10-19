@@ -81,7 +81,7 @@ USERNAME = '@'..data.username_
 else 
 USERNAME = FlterName(data.first_name_..' '..(data.last_name_ or ""),20) 
 end
-bd = '🙋🏻‍♂╿العضو ['..USERNAME..'](tg://user?id='..msg.sender_user_id_..') \n📌╽لأستخدام البوت عليك الاشتراك ب قناة السورس https://t.me/adnanrefaeii2
+bd = '♂╿العضو ['..USERNAME..'](tg://user?id='..msg.sender_user_id_..') \n📌╽لأستخدام البوت عليك الاشتراك ب قناة السورس
 sendMsg(msg.chat_id_,msg.id_,bd)
 end,nil)
 return false
