@@ -41,7 +41,7 @@ redis:setex(max.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_,500,true)
 sendMsg(msg.chat_id_,msg.id_,'*📊│ارسل لي عدد النقاط الذي تريده*')
 end
 if not redis:get(max..'lock_geams'..msg.chat_id_) and msg.GroupActive then
-if MsgText[1] == 'اسئله' or MsgText[1] == 'ختيارات' or MsgText[1] == 'بدء الاسئله' then   
+if MsgText[1] == 'اسئله' or MsgText[1] == 'اختيارات' or MsgText[1] == 'بدء الاسئله' then   
 redis:set(max.."GAME:S"..msg.chat_id_,true) 
 t1 = [[
 ماهو اطول نهر في العالم 
@@ -1079,7 +1079,7 @@ max = {
 "^(نعم)$",
 "^(الاعبين)$",
 "^(بدء الاسئله)$",
-"^(ختيارات)$",
+"^(اختيارات)$",
 "^(اسئله)$",
 "^(الالعاب)$",
 "^(محيبس)$",
