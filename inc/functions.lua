@@ -746,7 +746,7 @@ end
 --================================{{  List kk  }} ===================================
 
 function vorr(msg) 
-local message = '*🐂┊قائمه الثور *\n\n'
+local message = '*❌┊قائمه النصابين *\n\n'
 local monsha = redis:smembers(max..':vor:'..msg.chat_id_)
 if #monsha == 0 then 
 message = message .."♦️┇ لايوجد أحد مرفوع في البوت\n❕"
