@@ -1343,7 +1343,7 @@ end
 if NumAdmin == 0 then 
 return sendMsg(msg.chat_id_,msg.id_,"♦️│لا يـوجـد أدمـنـيـه لكي يتـم رفعهم \n")
 else
-return sendMsg(msg.chat_id_,msg.id_,"♦️│تم رفع  { *"..NumAdmin.."* } مـن آلآدمـنيهہ‌‏ في آلبوت \n✓️")
+return sendMsg(msg.chat_id_,msg.id_,"♦️│تم رفع  { *"..NumAdmin.."* } مـن الادمـنيه في البوت \n✓️")
 end
 end,100)
 end
@@ -1368,10 +1368,10 @@ if res == 200 then
 print(url) 
 local Req = JSON.decode(url)
 if Req.ok and Req.result and Req.result.status == "left" or Req.result.status == "kicked" then
-return "🚸╿آشـترگ بآلقنآ‌‏هہ آولآ ["..UserChaneel.."] \n🔛╽ثم آرجع آرسـل تفعيل ."
+return "🚸╿اشـترگ بالقناه اولا ["..UserChaneel.."] \n🔛╽ثم ارجع ارسـل تفعيل ."
 end
 else
-return "🚸╿آشـترگ بآلقنآ‌‏هہ آولآ ["..UserChaneel.."] \n🔛╽ثم آرجع آرسـل تفعيل ."
+return "🚸╿اشـترك بالقناه اولا ["..UserChaneel.."] \n🔛╽ثم ارجع ارسـل تفعيل ."
 end
 end
  
@@ -1380,7 +1380,7 @@ GetFullChat(msg.chat_id_,function(arg,data)
 local GroupUsers = tonumber(redis:get(max..':addnumberusers') or 0)
 local Groupcount = tonumber(data.member_count_)
 if GroupUsers  >= Groupcount and not msg.SudoBase then
-return sendMsg(msg.chat_id_,msg.id_,'🚸*│*لآ يمـگنني تفعيل آلبوت في آلمـجمـوعهہ‏ يجب آن يگون آگثر مـن *【'..GroupUsers..'】* عضـو 👤')
+return sendMsg(msg.chat_id_,msg.id_,'🚸*│*لا يمـگنني تفعيل البوت في المـجمـوعه يجب ان يكون اكثر مـن *【'..GroupUsers..'】* عضـو 👤')
 else 
 GetChatMember(msg.chat_id_,our_id,function(arg,data)
 if data.status_.ID == "ChatMemberStatusMember" then
@@ -1506,10 +1506,10 @@ return sendMsg(ChatID,MsgID,"🏌‍♂*┊*عذرا لا يمكن رفع بوت
 elseif data.type_.ID == "ChannelChatInfo" then 
 end
 if redis:sismember(max..':vor:'..ChatID,UserID) then 
-return SendMention(ChatID,UserID,MsgID,'🙍🏻‍♂┇العضو » ❪ '..USERNAME..' ❫\n🎫┇الايدي » ❪ '..UserID..' ❫\n💯┇انه بالتأكيد ثور \n✓️',17,USERCAR) 
+return SendMention(ChatID,UserID,MsgID,'❌♂┇العضو » ❪ '..USERNAME..' ❫\n🎫┇الايدي » ❪ '..UserID..' ❫\n💯┇انه بالتأكيد نصاب \n✓️',17,USERCAR) 
 end
 redis:sadd(max..':vor:'..ChatID,UserID)
-return SendMention(ChatID,UserID,MsgID,'🙍🏻‍♂┇العضو » ❪ '..USERNAME..' ❫\n🎫┇الايدي » ❪ '..UserID..' ❫\n💯┇تمت ترقيته ليصبح ثور \n✓️',17,USERCAR) 
+return SendMention(ChatID,UserID,MsgID,'❌♂┇العضو » ❪ '..USERNAME..' ❫\n🎫┇الايدي » ❪ '..UserID..' ❫\n💯┇تمت ترقيته ليصبح نصاب \n✓️',17,USERCAR) 
 end
 
 
