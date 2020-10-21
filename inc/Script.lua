@@ -412,7 +412,7 @@ if not msg.Rank then end
 return kll(msg) 
 end
 
-if MsgText[1] == "قائمه الثور" then 
+if MsgText[1] == "قائمه النصابين" then 
 if not msg.Rank then end
 return vorr(msg) 
 end
@@ -928,14 +928,14 @@ return false
 end
 
 
-if MsgText[1] == "رفع ثور" then
+if MsgText[1] == "رفع نصاب" then
 if not msg.Rank then end
 if not MsgText[2] and msg.reply_id then
 GetMsgInfo(msg.chat_id_,msg.reply_id,action_by_reply,{msg=msg,cmd="voo"})
 end
 return false
 end
-if MsgText[1] == "تنزيل ثور" then
+if MsgText[1] == "تنزيل نصاب" then
 if not msg.Rank then end
 if not MsgText[2] and msg.reply_id then
 GetMsgInfo(msg.chat_id_,msg.reply_id,action_by_reply,{msg=msg,cmd="vooo"})
@@ -1361,7 +1361,7 @@ redis:del(max..':zzkm:'..msg.chat_id_)
 return "🙋🏻‍♂*┇*أهلا عزيزي "..msg.TheRankCmd.."   \n♦️┇ تم مسح {* "..NumMnsha.." *} من الكليجه \n✓"
 end
 
-if MsgText[2] == "قائمه الثور" then
+if MsgText[2] == "قائمه النصابين" then
 if not msg.Rank then end
 local NumMnsha = redis:scard(max..':vor:'..msg.chat_id_)
 if NumMnsha ==0 then 
