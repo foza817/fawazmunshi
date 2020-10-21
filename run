@@ -71,9 +71,9 @@ done
 else
 
 if ! screen -list | grep -q "foza817"; then
-screen -S FHAIWIH ./run R
+screen -S FOZA817 ./run R
 fi
-screen -X -S foza817 kill
-screen -S foza817 ./run R
+screen -X -S FOZA817 kill
+screen -S FOZA817 ./run R
 fi
 
