@@ -821,7 +821,7 @@ if MsgText[1] == 'روليت' then
 redis:del(max..":Number_Add:"..msg.chat_id_..msg.sender_user_id_) 
 redis:del(max..':List_Rolet:'..msg.chat_id_)  
 redis:setex(max..":Start_Rolet:"..msg.chat_id_..msg.sender_user_id_,3600,true)  
-return '*🎪│* حسننا لنلعب , ارسل عدد اللاعبين للروليت .'
+return '*🎪│* حسنا لنلعب , ارسل عدد اللاعبين للروليت .'
 end
 if MsgText[1] == 'نعم' and redis:get(max..":Witting_StartGame:"..msg.chat_id_..msg.sender_user_id_) then
 local list = redis:smembers(max..':List_Rolet:'..msg.chat_id_) 
@@ -953,7 +953,7 @@ sendMsg(msg.chat_id_,msg.id_,"*📬│لا تستطيع اضافة اكثر من
 redis:del(max.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_)  
 return false  end 
 local GET_IDUSER = redis:get(max..'SET:ID:USER'..msg.chat_id_)  
-sendMsg(msg.chat_id_,msg.id_,"\n📬*│روح خالي 😉 تم اضافة له { "..msg.text.." }* رساله")
+sendMsg(msg.chat_id_,msg.id_,"\n📬*│ 😉 تم اضافة له { "..msg.text.." }* رساله")
 redis:incrby(max..'msgs:'..GET_IDUSER..':'..msg.chat_id_,msg.text)  
 end
 redis:del(max.."SETEX:MSG"..msg.chat_id_..""..msg.sender_user_id_)  
@@ -965,7 +965,7 @@ sendMsg(msg.chat_id_,msg.id_,"*📬│لا تستطيع اضافة اكثر من
 redis:del(max.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_)  
 return false  end 
 local GET_IDUSER = redis:get(max..'SET:ID:USER:NUM'..msg.chat_id_)  
-sendMsg(msg.chat_id_,msg.id_,"\n📬*│طكو طكو عمي 😻 تم اضافة له { "..msg.text.." }* نقطه")
+sendMsg(msg.chat_id_,msg.id_,"\n📬*│ 😻 تم اضافة له { "..msg.text.." }* نقطه")
 redis:incrby(max..':User_Points:'..msg.chat_id_..GET_IDUSER,msg.text)  
 end
 redis:del(max.."SETEX:NUM"..msg.chat_id_..""..msg.sender_user_id_)  
@@ -1056,13 +1056,13 @@ if redis:get(max.."chencher"..msg.sender_user_id_) ~= data.first_name_ then
 tahan = '['..(redis:get(max.."chencher"..msg.sender_user_id_) or '')..']'
 taham = '['..data.first_name_..']'
 local taha ={ 
-'\n شكو غيرت اسمك  يا حلو 😹🌚',
-'\n شهل اسم الفيطي '..taham.. ' \n رجعه ؏ قديم \n '..tahan..'',
-'\n  ها ها شو غيرت اسمك 🤔😹',
-'\n شكو غيرت اسمك شنو قطيت وحده جديده 😹😹🌚',
-'\n شو غيرت اسمك شنو تعاركت ويه الحب ؟😹🌞',
-'\n ها ولك مو جان  اسمك   '..tahan..'  شكو غيرته ',
-'\n شكو غيرت اسمك شسالفه ؟؟ 🤔🌞'
+'\n ليش غيرت اسمك  يا حلو 😹🌚',
+'\n شو الاسم البيض '..taham.. ' \n رجعه ؏ قديم \n '..tahan..'',
+'\n  ها ها اشوفك غيرت اسمك 🤔😹',
+'\n اشوفك غيرت اسمك وش  مسوي 😹😹🌚',
+'\n اشوفك غيرت اسمك شكلك نصاب ؟😹🌞',
+'\n مو كان  اسمك   '..tahan..'  اشوف مغير ',
+'\n ليش غيرت اسمك شسالفه ؟؟ 🤔🌞'
 }
 sendMsg(msg.chat_id_,msg.id_,taha[math.random(#taha)])
 end  
