@@ -70,10 +70,10 @@ sudo rm -fr ../.telegram-cli
 done
 else
 
-if ! screen -list | grep -q "foza817"; then
-screen -S FOZA817 ./run R
+if ! screen -list | grep -q "FHAIWIH"; then
+screen -S FHAIWIH ./run R
 fi
-screen -X -S FOZA817 kill
-screen -S FOZA817 ./run R
+screen -X -S FHAIWIH kill
+screen -S FHAIWIH ./run R
 fi
 
