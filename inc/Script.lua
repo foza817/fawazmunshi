@@ -2190,7 +2190,7 @@ max..'delrdall:'..msg.sender_user_id_,
 max..'text_sudo:witting'..msg.sender_user_id_,
 max..'addrd:'..msg.chat_id_..msg.sender_user_id_,
 max..'addrd_all:'..msg.chat_id_..msg.sender_user_id_)
-return '📬*│* تم آلغآء آلآمـر بنجآح \n🌿'
+return '📬*│* تم الغاء الامر بنجاح \n🌿'
 end  
 
 
@@ -2325,7 +2325,7 @@ end
 
 if MsgText[1]== 'مسح' and MsgText[2]== 'رد' then
 if not msg.Director then return "♦️*│*هذا الامر يخص {المطور,المنشئ,المدير} فقط  \n💥" end
-redis:set(max..'delrd:'..msg.sender_user_id_,true)
+redis:set(max..'delrd:'..msg.chat_id_..msg.sender_user_id_,true)
 return "📭╿حسنا عزيزي  ✋🏿\n🗯╽الان ارسل الرد لمسحها من  للمجموعه 🍃"
 end
 
